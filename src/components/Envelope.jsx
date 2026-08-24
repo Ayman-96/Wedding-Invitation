@@ -8,7 +8,7 @@ import arrow from "../assets/arrow-bg.png";
 import { useEffect, useRef, useState } from "react";
 import Card from "./Card";
 
-function Envelope() {
+function Envelope({ closeEnvelope }) {
   const [step, setStep] = useState(0);
   const [sealRemoved, setSealRemoved] = useState(false);
   const [flapOpened, setFlapOpened] = useState(false);
@@ -34,8 +34,16 @@ function Envelope() {
     } else if (step === 1 && distanceFlap > 60) {
       setFlapOpened(true);
       setStep(2);
-    } else if (step === 2 && distanceCard > 60) setCardRised(true);
+    } else if (step === 2 && distanceCard > 60) {
+      setCardRised(true);
+    }
   }
+  useEffect(() => {
+    if (!cardRised) return;
+
+    const close = setTimeout(() => closeEnvelope(), 4000);
+    return () => clearTimeout(close);
+  }, [cardRised, closeEnvelope]);
   return (
     <div
       className={`flex items-center justify-center w-full h-screen overflow-x-hidden bg-cover bg-no-repeat bg-center ${cardRised && "animate-fade-out"}`}
@@ -79,6 +87,7 @@ function Envelope() {
     </div>
   );
 }
+
 function Guider({ step }) {
   const [fading, setFading] = useState(false);
 
