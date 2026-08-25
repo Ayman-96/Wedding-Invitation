@@ -68,7 +68,7 @@ function Explore({ lang }) {
     },
   ];
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center select-none">
       <div className="grid grid-cols-2 gap-5">
         {sections.map((sec, i) => {
           return (
@@ -77,8 +77,9 @@ function Explore({ lang }) {
                border rounded-3xl ${activeSec === i ? "bg-[#A7B58C] text-[#FDFCF9] border-[#8CA68A]" : "bg-[#F1E8D8] border-[#C2A26B]"}`}
             >
               <div
-                className={`absolute w-20 h-20 rounded-full -right-7 -top-7 transition-colors duration-300 ease-in-out
-                    ${activeSec === i ? "bg-[#F1E8D8]/50 animate-circle-move" : " bg-[#D8A7A0]/50"}`}
+                className={`absolute w-20 h-20 rounded-full transition-colors duration-300 ease-in-out -top-7
+                    ${activeSec === i ? "bg-[#F1E8D8]/50 animate-circle-move-left" : " bg-[#D8A7A0]/50"}
+                    ${lang === "ku" ? `-left-7 ${activeSec === i && "animate-circle-move-right"}` : " -right-7"}`}
               ></div>
               <div className={`mt-2 ${activeSec === i ? "animate-float" : ""}`}>
                 {sec[lang].icon}

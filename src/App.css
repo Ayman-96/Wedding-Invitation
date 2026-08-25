@@ -16,7 +16,8 @@
   --animate-fade-in: fadeIn 0.5s ease-in-out forwards;
   --animate-sway: swayLoop 1.2s ease-in-out infinite;
   --animate-fade-out-arrow: fadeOut 0.5s ease-in-out forwards;
-  --animate-circle-move: circleMove 8s ease-out forwards;
+  --animate-circle-move-left: circleMoveLeft 8s ease-out forwards;
+  --animate-circle-move-right: circleMoveRight 8s ease-out forwards;
   --animate-float: floatUpDown 2s ease-in-out infinite;
 }
 
@@ -95,13 +96,24 @@ body,
   }
 }
 
-@keyframes circleMove {
+@keyframes circleMoveLeft {
   0% {
     transform: translate(0, 0);
     opacity: 1;
   }
   100% {
     transform: translate(-120px, 120px);
+    opacity: 1;
+  }
+}
+
+@keyframes circleMoveRight {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(120px, 120px);
     opacity: 1;
   }
 }
