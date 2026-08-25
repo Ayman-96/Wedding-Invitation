@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Hero from "./Hero";
 import homeBg from "../assets/homeBg.png";
+import Explore from "./Explore";
 function Home() {
   const [lang, setLang] = useState("en");
-
   return (
     <div
       dir={lang === "ku" ? "rtl" : "ltr"}
@@ -11,13 +11,16 @@ function Home() {
       style={{ backgroundImage: `url(${homeBg})` }}
     >
       <Hero lang={lang} />
+
       <div
         title="divider"
-        className="flex items-center justify-start gap-5 p-5 mt-5"
+        className="flex items-center justify-start gap-3 py-5 px-6 mt-4"
       >
-        <div>Explore</div>
+        <div className="text-[#5F6B4E] tracking-widest">Explore</div>
         <div className="h-[1px] w-300 bg-[#C2A26B]"></div>
       </div>
+
+      <Explore lang={lang} />
     </div>
   );
 }
