@@ -11,16 +11,17 @@ function Hero({ lang }) {
 
   const content = {
     en: {
-      title: "Ahmad & Kaya",
+      title: "Ahmad Kaya",
       subtitle: "Together with their families",
       date: "SATURDAY ❁ OCTOBER 4 ❁ 2026",
     },
     ku: {
-      title: "ئەحمەد & کایا",
+      title: "ئەحمەد کایا",
       subtitle: "بۆنەی مارەبڕین",
       date: "شەممە ❁ ٤ بەفرانبار  ❁ ٢٠٢٦",
     },
   };
+  const names = content[lang].title.split(" ");
 
   const styleCountdown =
     "flex flex-col items-center justify-center p-2 w-28 font-bold text-xl text-[#5F6B4E] bg-[#F1E8D8] border border-[#C2A26B] rounded-2xl";
@@ -58,24 +59,24 @@ function Hero({ lang }) {
       <div title="topImg">
         <img
           src={bismillah}
-          className="w-55 min-h-full  select-none"
+          className="w-60 min-h-full select-none"
           draggable={false}
         />
       </div>
       <div>
         <img
           src={headDesign}
-          className="w-40 min-h-full ml-7  select-none"
+          className="w-40 min-h-full select-none"
           draggable={false}
         />
       </div>
 
       <div className="flex items-center justify-center gap-2 flex-col mt-2">
-        <div className="capitalize text-[0.75rem] text-[#638C6C] bg-[#C2A26B]/20 tracking-[0.20rem] uppercase">
+        <div className="capitalize text-[0.75rem] px-2 text-[#638C6C] bg-[#C2A26B]/20 tracking-[0.20rem] uppercase">
           {content[lang].subtitle}
         </div>
         <div className="text-[40px] tracking-widest font-bold -mt-2 text-[#5F6B4E]">
-          {content[lang].title}
+          {names[0]} <em className="font-display">&amp;</em> {names[1]}
         </div>
         <div className="text-md tracking-widest text-[#3D3D35]">
           {content[lang].date}

@@ -19,12 +19,13 @@
   --animate-circle-move-left: circleMoveLeft 8s ease-out forwards;
   --animate-circle-move-right: circleMoveRight 8s ease-out forwards;
   --animate-float: floatUpDown 2s ease-in-out infinite;
+  --animate-color-pulse: colorPulse 21s ease-in-out infinite;
 }
 
 html,
 body,
 #root {
-  height: 100%;
+  min-height: 100%;
   margin: 0;
 }
 
@@ -125,5 +126,19 @@ body,
   }
   50% {
     transform: translateY(-4px);
+  }
+}
+
+@keyframes colorPulse {
+  0%,
+  47.6% {
+    background-color: #a7b58c;
+  }
+  52.4%,
+  97.6% {
+    background-color: #d8a7a0;
+  }
+  100% {
+    background-color: #a7b58c;
   }
 }
