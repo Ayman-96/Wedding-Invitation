@@ -71,8 +71,11 @@ function Hero({ lang }) {
         />
       </div>
 
-      <div className="flex items-center justify-center gap-2 flex-col mt-2">
-        <div className="capitalize text-[0.75rem] px-2 text-[#638C6C] bg-[#C2A26B]/20 tracking-[0.20rem] uppercase">
+      <div
+        dir="ltr"
+        className="flex items-center justify-center gap-2 flex-col mt-2"
+      >
+        <div className="text-[0.75rem] px-2 text-[#638C6C] bg-[#C2A26B]/20 tracking-[0.20rem] uppercase">
           {content[lang].subtitle}
         </div>
         <div className="text-[40px] tracking-widest font-bold -mt-2 text-[#5F6B4E]">

@@ -1,10 +1,8 @@
-import { useState } from "react";
 import Hero from "./Hero";
 import homeBg from "../assets/homeBg.png";
 import Explore from "./Explore";
 import Footer from "./Footer";
-function Home() {
-  const [lang, setLang] = useState("ku");
+function Home({ lang }) {
   return (
     <div
       dir={lang === "ku" ? "rtl" : "ltr"}
@@ -20,7 +18,7 @@ function Home() {
         <div className="text-[#5F6B4E] tracking-widest whitespace-nowrap select-none">
           {lang === "ku" ? "زیاتر ببینە" : "Explore"}
         </div>
-        <div className="h-[1px] w-300 bg-[#C2A26B]"></div>
+        <div className="h-px w-300 bg-[#C2A26B]"></div>
       </div>
 
       <div className="flex flex-col gap-10">

@@ -11,7 +11,7 @@ function Footer({ lang }) {
         font-normal tracking-wide animate-color-pulse"
       >
         {lang === "ku" ? (
-          <p className="flex items-center gap-0.25">
+          <p className="flex items-center gap-0.25 animate-color-pulse">
             چاوەڕوانتانین، A{" "}
             <LuHeartHandshake fill="#D8A7A0" stroke="#FDFCF9" /> K
           </p>
