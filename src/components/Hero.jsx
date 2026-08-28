@@ -17,7 +17,7 @@ function Hero({ lang }) {
     },
     ku: {
       title: "ئەحمەد کایا",
-      subtitle: "بۆنەی مارەبڕین",
+      subtitle: "بانگهێشتتان دەکەین بۆ ئاهەنگی مارەبڕینی",
       date: "شەممە ❁ ٤ بەفرانبار  ❁ ٢٠٢٦",
     },
   };
@@ -77,17 +77,17 @@ function Hero({ lang }) {
         className="flex items-center justify-center gap-2 flex-col mt-2"
       >
         <div
-          className={`text-[0.75rem] px-2 text-[#638C6C] bg-[#C2A26B]/20 tracking-[0.20rem] uppercase ${lang === "ku" ? "font-ku-body" : "font-body"}`}
+          className={`px-2 text-[#638C6C] bg-[#C2A26B]/20 tracking-[0.20rem] uppercase ${lang === "ku" ? "font-ku-body text-md" : "font-body text-[0.75rem]"}`}
         >
           {content[lang].subtitle}
         </div>
         <div
-          className={`text-[40px] tracking-widest font-bold -mt-2 text-[#5F6B4E] ${lang === "ku" ? "font-ku-display" : "font-display"}`}
+          className={`tracking-widest font-bold -mt-2 text-[#5F6B4E] ${lang === "ku" ? "font-ku-display text-[50px] " : "font-display text-[40px] "}`}
         >
           {names[0]} <em className="font-display">&amp;</em> {names[1]}
         </div>
         <div
-          className={`text-md tracking-widest text-[#3D3D35] ${lang === "ku" ? "font-ku-body" : "font-body"}`}
+          className={`tracking-widest text-[#3D3D35] ${lang === "ku" ? "font-ku-display text-xl" : "font-display text-md "}`}
         >
           {content[lang].date}
         </div>
