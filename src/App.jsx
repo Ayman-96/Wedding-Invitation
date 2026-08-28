@@ -1,7 +1,7 @@
 import { useState } from "react";
 // import Envelope from "./components/Envelope";
-// import Home from "./components/Home";
-import Location from "./components/Location";
+import Home from "./components/Home";
+// import Location from "./components/Location";
 
 function App() {
   // const [isEnvOpened, setIsEnvOpened] = useState(false);
@@ -20,9 +20,9 @@ function App() {
       ) : (
         <Home lang={lang} />
       )} */}
-      {/* <Home lang={lang} /> */}
+      <Home lang={lang} />
 
-      <Location lang={lang} />
+      {/* <Location lang={lang} /> */}
     </div>
   );
 }

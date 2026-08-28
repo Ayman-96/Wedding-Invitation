@@ -25,6 +25,7 @@ function Hero({ lang }) {
 
   const styleCountdown =
     "flex flex-col items-center justify-center p-2 w-28 font-bold text-xl text-[#5F6B4E] bg-[#F1E8D8] border border-[#C2A26B] rounded-2xl";
+
   function formatNum(num, lang) {
     return lang === "ku" ? num.toLocaleString("ar-EG") : num;
   }
@@ -75,13 +76,19 @@ function Hero({ lang }) {
         dir="ltr"
         className="flex items-center justify-center gap-2 flex-col mt-2"
       >
-        <div className="text-[0.75rem] px-2 text-[#638C6C] bg-[#C2A26B]/20 tracking-[0.20rem] uppercase">
+        <div
+          className={`text-[0.75rem] px-2 text-[#638C6C] bg-[#C2A26B]/20 tracking-[0.20rem] uppercase ${lang === "ku" ? "font-ku-body" : "font-body"}`}
+        >
           {content[lang].subtitle}
         </div>
-        <div className="text-[40px] tracking-widest font-bold -mt-2 text-[#5F6B4E]">
+        <div
+          className={`text-[40px] tracking-widest font-bold -mt-2 text-[#5F6B4E] ${lang === "ku" ? "font-ku-display" : "font-display"}`}
+        >
           {names[0]} <em className="font-display">&amp;</em> {names[1]}
         </div>
-        <div className="text-md tracking-widest text-[#3D3D35]">
+        <div
+          className={`text-md tracking-widest text-[#3D3D35] ${lang === "ku" ? "font-ku-body" : "font-body"}`}
+        >
           {content[lang].date}
         </div>
       </div>
@@ -92,24 +99,41 @@ function Hero({ lang }) {
       >
         <div className={styleCountdown}>
           {formatNum(timeLeft.days, lang)}{" "}
-          <span className="font-normal">{lang === "ku" ? "ڕۆژ" : "days"}</span>
+          <span
+            className={`font-normal ${lang === "ku" ? "font-ku-display" : "font-display"}`}
+          >
+            {lang === "ku" ? "ڕۆژ" : "days"}
+          </span>
         </div>
         <div className={styleCountdown}>
           {formatNum(timeLeft.hours, lang)}{" "}
-          <span className="font-normal">
+          <span
+            className={`font-normal ${lang === "ku" ? "font-ku-display" : "font-display"}`}
+          >
             {lang === "ku" ? "کاتژمێر" : "hours"}
           </span>
         </div>
         <div className={styleCountdown}>
-          <div>
-            {formatNum(timeLeft.minutes, lang)}
-            <span className="text-sm font-semibold">
-              {" "}
-              :{formatNum(timeLeft.seconds, lang)}
-            </span>
-          </div>
+          {lang === "ku" ? (
+            <div>
+              <span className="text-sm font-semibold">
+                {formatNum(timeLeft.seconds, lang)}:{" "}
+              </span>
+              {formatNum(timeLeft.minutes, lang)}
+            </div>
+          ) : (
+            <div>
+              {formatNum(timeLeft.minutes, lang)}
+              <span className="text-sm font-semibold">
+                {" "}
+                :{formatNum(timeLeft.seconds, lang)}
+              </span>
+            </div>
+          )}
 
-          <span className="font-normal">
+          <span
+            className={`font-normal ${lang === "ku" ? "font-ku-display" : "font-display"}`}
+          >
             {lang === "ku" ? "خولەک" : "minutes"}
           </span>
         </div>

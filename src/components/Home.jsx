@@ -6,7 +6,8 @@ function Home({ lang }) {
   return (
     <div
       dir={lang === "ku" ? "rtl" : "ltr"}
-      className={`${lang === "ku" ? "font-arabic" : "font-display"} px-5 animate-fade-in bg-cover bg-repeat-y bg-center w-full min-h-screen`}
+      className={`${lang === "ku" ? "font-kurdish" : "font-display"} px-5 animate-fade-in 
+      bg-cover bg-repeat-y bg-center w-full min-h-screen`}
       style={{ backgroundImage: `url(${homeBg})` }}
     >
       <Hero lang={lang} />
@@ -15,8 +16,10 @@ function Home({ lang }) {
         title="divider"
         className="flex items-center justify-start gap-3 py-5 px-6 mt-4"
       >
-        <div className="text-[#5F6B4E] tracking-widest whitespace-nowrap select-none">
-          {lang === "ku" ? "زیاتر ببینە" : "Explore"}
+        <div
+          className={`text-[#5F6B4E] tracking-widest whitespace-nowrap select-none ${lang === "ku" ? "font-ku-display font-semibold text-lg" : "font-display"}`}
+        >
+          {lang === "ku" ? "زیاتر بـبـیـنـە" : "Explore"}
         </div>
         <div className="h-px w-300 bg-[#C2A26B]"></div>
       </div>

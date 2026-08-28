@@ -1,9 +1,10 @@
-@import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Instrument+Sans:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap");
 
+@import "tailwindcss";
 @theme {
-  --font-arabic: "Noto Naskh Arabic", "Segoe UI", Tahoma, sans-serif;
+  --font-ku-display: "Amiri", sans-serif;
+  --font-ku-body: serif;
   --font-display: "Fraunces", serif;
   --font-body: "Instrument Sans", sans-serif;
 

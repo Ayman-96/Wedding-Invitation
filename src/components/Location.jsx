@@ -50,19 +50,29 @@ function Location({ lang }) {
   return (
     <div
       draggable={false}
-      className="w-full min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden p-3"
+      className={`select-none w-full min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden p-3 ${lang === "ku" ? "font-kurdish" : "font-display"}`}
       style={{ backgroundImage: `url(${locationBg})` }}
     >
-      <div
+      <button
         data-component="leave-pages"
-        className="flex items-center gap-1 text-[#5F6B4E] tracking-widest font-bold text-xl font-display opacity-80"
+        className="flex items-center gap-1 text-[#5F6B4E] tracking-widest font-bold text-xl opacity-80"
       >
         <ArrowLeft size={20} />{" "}
-        <span> {lang === "ku" ? "ناونیشان" : "Location"} </span>
-      </div>
+        <span
+          className={`${lang === "ku" ? "font-ku-display" : "font-display"}`}
+        >
+          {" "}
+          {lang === "ku" ? "ناونیشان" : "Location"}{" "}
+        </span>
+      </button>
 
-      <div data-component="location-body" className="mt-25 px-6">
+      <div
+        dir={lang === "ku" ? "rtl" : "ltr"}
+        data-component="location-body"
+        className="mt-25 px-6"
+      >
         <div
+          dir="ltr"
           data-component="header"
           className="relative flex items-end flex-col px-6"
         >
@@ -100,11 +110,19 @@ function Location({ lang }) {
               <div className="flex gap-2 px-3 bg-linear-to-t z-5 from-[#5F6B4E]/90 via-[#EFE9D8] to-transparent w-full h-18 py-5">
                 <MapPin className="mt-1 animate-float" stroke="#454E30" />
                 <div>
-                  <p className="text-lg text-[#596e3c]">
-                    Wedding Garden & Venue
+                  <p
+                    className={`text-[#596e3c]  ${lang === "ku" ? "font-ku-display text-xl" : "font-display text-lg "}`}
+                  >
+                    {lang === "ku"
+                      ? "باخچە و هۆڵی ئاهەنگ"
+                      : "Wedding Garden & Venue"}
                   </p>
-                  <p className="text-xs text-[#3D3D35] opacity-90">
-                    direction to the place
+                  <p
+                    className={`text-[#3D3D35] opacity-90  ${lang === "ku" ? "font-ku-body text-sm" : "font-body text-xs "}`}
+                  >
+                    {lang === "ku"
+                      ? "ناونیشان بەرەو شوێنەکە"
+                      : "direction to the place"}
                   </p>
                 </div>
               </div>
@@ -112,21 +130,25 @@ function Location({ lang }) {
           </a>
         </div>
 
+        {/* Buttons */}
         <div className="flex items-center justify-center gap-3 mt-5">
           <a
             href="https://maps.app.goo.gl/forxbvXs9xNTquvW8"
             draggable={false}
             target="_blank"
-            className="flex text-center items-center py-3 px-4 text-sm gap-2 -ml-5 cursor-pointer
-           bg-[#5F6B4E] font-semibold text-[#FDFCF9] border-2 rounded-4xl"
+            className={`flex text-center items-center py-3   gap-2 cursor-pointer
+           bg-[#5F6B4E] font-semibold text-[#FDFCF9] border-2 rounded-4xl
+            ${lang === "ku" ? "px-3 font-ku-display text-md" : "px-4 -ml-5 gap-2 font-display text-sm "}`}
           >
             <GiDirectionSigns size={20} />{" "}
             {lang === "ku" ? "وەرگرتنی ئاڕاستە" : "Get Directions"}
           </a>
+
           <button
             onClick={handleCopy}
-            className="flex text-center items-center p-3 px-4 text-sm gap-2 -mr-5 cursor-pointer
-           bg-[#faf2de] text-[#5F6B4E] border-2 font-semibold rounded-4xl"
+            className={`flex text-center items-center p-3 gap-2 cursor-pointer
+           bg-[#faf2de] text-[#5F6B4E] border-2 font-semibold rounded-4xl
+            ${lang === "ku" ? "px-3 font-ku-display text-md" : "px-4 -mr-5 gap-2 font-display text-sm "}`}
           >
             {copied ? <TbCopyCheckFilled /> : <Copy size={16} />}
 
@@ -181,8 +203,16 @@ function Location({ lang }) {
               <div className={toKnowStyle}>
                 {card[lang].icon}
                 <div>
-                  <p className="text-sm font-medium ">{card[lang].label}</p>
-                  <p className="text-xs opacity-70">{card[lang].desc}</p>
+                  <p
+                    className={` font-medium mb-0.5 ${lang === "ku" ? "font-ku-display text-md" : "font-display text-sm"}`}
+                  >
+                    {card[lang].label}
+                  </p>
+                  <p
+                    className={`opacity-70  ${lang === "ku" ? "font-ku-body text-sm" : "font-body text-xs "}`}
+                  >
+                    {card[lang].desc}
+                  </p>
                 </div>
               </div>
             );

@@ -85,8 +85,16 @@ function Explore({ lang }) {
                 {sec[lang].icon}
               </div>
               <div>
-                <p className="font-bold text-xl">{sec[lang].label}</p>
-                <p className="text-xs">{sec[lang].subLabel}</p>
+                <p
+                  className={`font-bold mb-0.5  ${lang === "ku" ? "font-ku-display text-2xl" : "font-display text-xl"}`}
+                >
+                  {sec[lang].label}
+                </p>
+                <p
+                  className={` ${lang === "ku" ? "font-ku-body font-extralight" : "font-body text-xs "}`}
+                >
+                  {sec[lang].subLabel}
+                </p>
               </div>
             </div>
           );
