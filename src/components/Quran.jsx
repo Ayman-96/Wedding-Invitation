@@ -55,7 +55,17 @@ function Quran({ lang }) {
 
     setIsPlaying(!isPlaying);
   }
+  function displayAyah() {
+    if (!showAyah) {
+      audioRef.current.play();
+      setIsPlaying(true);
+    } else {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    }
 
+    setShowAyah(!showAyah);
+  }
   function nextAyah(dir) {
     if (dir === "next") {
       if (currentAyah.num < 2) setCurrentAyah((p) => ayats[p.num + 1]);
@@ -87,9 +97,7 @@ function Quran({ lang }) {
         </div> */}
         <button
           draggable={false}
-          onClick={() => {
-            (togglePlay(), setShowAyah((p) => !p));
-          }}
+          onClick={displayAyah}
           className="mt-2 px-5 w-35 h-35 bg-cover bg-center flex items-center justify-center outline-none cursor-pointer"
           style={{ backgroundImage: `url(${playOrentation})` }}
         >
@@ -106,10 +114,16 @@ function Quran({ lang }) {
         {/*Calligraphy Design*/}
         <img
           src={calligraphy1}
-          className="absolute w-37 left-2 bottom-100 -rotate-12"
+          className="absolute w-37 left-2 bottom-100 -rotate-12 opacity-70"
         />
-        <img src={calligraphy2} className="absolute w-45 left-5 bottom-60" />
-        <img src={calligraphy3} className="absolute w-60 left-5 bottom-5" />
+        <img
+          src={calligraphy2}
+          className="absolute w-45 left-5 bottom-60 opacity-90"
+        />
+        <img
+          src={calligraphy3}
+          className="absolute w-60 left-5 bottom-5 opacity-80"
+        />
 
         <audio ref={audioRef} src={currentAyah.src} loop />
         {showAyah && (
