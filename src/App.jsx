@@ -1,6 +1,7 @@
 import { useState } from "react";
 // import Envelope from "./components/Envelope";
-import Home from "./components/Home";
+// import Home from "./components/Home";
+import Quran from "./components/Quran";
 // import Location from "./components/Location";
 
 function App() {
@@ -20,9 +21,10 @@ function App() {
       ) : (
         <Home lang={lang} />
       )} */}
-      <Home lang={lang} />
+      {/* <Home lang={lang} /> */}
 
       {/* <Location lang={lang} /> */}
+      <Quran lang={lang} />
     </div>
   );
 }

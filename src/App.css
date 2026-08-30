@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Instrument+Sans:wght@400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700;800&display=swap");
 
 @import "tailwindcss";
 @theme {
@@ -7,6 +9,8 @@
   --font-ku-body: serif;
   --font-display: "Fraunces", serif;
   --font-body: "Instrument Sans", sans-serif;
+  --font-ayah: "Noto Nastaliq Urdu", serif;
+  --font-ayah-display: "Lateef", serif;
 
   --animate-seal-peel: sealPeel 0.8s ease-in-out normal forwards;
   --animate-seal-peel: sealPeel 0.8s ease-in-out normal forwards;
@@ -21,6 +25,7 @@
   --animate-circle-move-right: circleMoveRight 8s ease-out forwards;
   --animate-float: floatUpDown 2s ease-in-out infinite;
   --animate-color-pulse: colorPulse 21s ease-in-out infinite;
+  --animate-spin-slow: spin-slow 20s linear infinite;
 }
 
 html,
@@ -141,5 +146,20 @@ body,
   }
   100% {
     background-color: #a7b58c;
+  }
+}
+
+@keyframes spin-slow {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 100;
+  }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
