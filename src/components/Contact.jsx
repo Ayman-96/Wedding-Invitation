@@ -1,6 +1,7 @@
 import { ArrowLeft, Heart, MessageCircle, Phone } from "lucide-react";
 import contactBg from "../assets/contactBg.png";
 import underContact from "../assets/underContact.png";
+import ReturnBack from "./return";
 
 function Contact({ lang }) {
   const contacts = [
@@ -34,21 +35,15 @@ function Contact({ lang }) {
       className="bg-cover bg-no-repeat w-full min-h-screen p-5"
       style={{ backgroundImage: `url(${contactBg})` }}
     >
-      <button
-        dir="ltr"
-        data-component="leave-pages"
-        className="flex items-center gap-1 text-[#501c08] tracking-widest font-bold text-md opacity-80"
-      >
-        <ArrowLeft size={20} />{" "}
-        <span
-          className={`${lang === "ku" ? "font-ku-display" : "font-display"}`}
-        >
-          {lang === "ku" ? "پەیوەندی" : "CONTACT"}
-        </span>
-      </button>
+      <ReturnBack
+        lang={lang}
+        text="text-[#501c08] text-lg tracking-widest top-2 left-3"
+        kuWord="پەیوەندی"
+        enWord="CONTACT"
+      />
 
       <div
-        className={`flex flex-col gap-1 items-center justify-center ${lang === "ku" ? "m3-4" : "my-7"}`}
+        className={`flex flex-col gap-1 items-center justify-center ${lang === "ku" ? "m-4" : "m-9"}`}
       >
         <h1
           className={`text-[#501c08] tracking-widest ${lang === "ku" ? "font-ayah text-3xl mb-4" : "font-display text-xl "}`}

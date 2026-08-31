@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Contact from "./components/Contact";
+// import Contact from "./components/Contact";
 // import Envelope from "./components/Envelope";
-// import Home from "./components/Home";
+import Home from "./components/Home";
 // import Quran from "./components/Quran";
 // import Location from "./components/Location";
 
@@ -22,12 +22,12 @@ function App() {
       ) : (
         <Home lang={lang} />
       )} */}
-      {/* <Home lang={lang} /> */}
+      <Home lang={lang} />
 
       {/* <Location lang={lang} /> */}
       {/* <Quran lang={lang} /> */}
 
-      <Contact lang={lang} />
+      {/* <Contact lang={lang} /> */}
     </div>
   );
 }

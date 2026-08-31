@@ -14,6 +14,7 @@ import ayah3 from "../audio/ayah3.mp3";
 import calligraphy1 from "../assets/quranCall1.png";
 import calligraphy2 from "../assets/quranCall2.png";
 import calligraphy3 from "../assets/quranCall3.png";
+import ReturnBack from "./return";
 
 const ayats = [
   {
@@ -83,6 +84,13 @@ function Quran({ lang }) {
       style={{ backgroundImage: `url(${quranBg})` }}
     >
       <div className="w-75 p-2 min-h-screen">
+        <ReturnBack
+          lang={lang}
+          text="text-[#501c08] text-lg tracking-widest"
+          kuWord="قورئان"
+          enWord="Quran"
+        />
+
         <div className="flex flex-col gap-4 items-end font-ayah text-2xl mt-7 mr-7 font-bold">
           <p>
             هُنَّ لِبَاسٌ <span className="text-[#596e3c]">لَّكُمْ</span>

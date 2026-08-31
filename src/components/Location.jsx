@@ -1,10 +1,11 @@
-import { ArrowLeft, Car, Clock, Copy, MapPin } from "lucide-react";
+import { Car, Clock, Copy, MapPin } from "lucide-react";
 import locationBg from "../assets/locationBg.png";
 import placeImg from "../assets/place.png";
 import locDivider from "../assets/locDivider.png";
 import { GiDirectionSigns } from "react-icons/gi";
 import { useState } from "react";
 import { TbCopyCheckFilled } from "react-icons/tb";
+import ReturnBack from "./return";
 
 function Location({ lang }) {
   const [copied, setCopied] = useState(false);
@@ -21,7 +22,7 @@ function Location({ lang }) {
       },
       ku: {
         label: "ئامادەبوون",
-        desc: "ئاهەنگەکە لە دەوروبەری کاتژمێر ٠٨:٣٠ دەستپێدەکات، تکایە پێش کاتژمێر ٠٨:٠٠ ئامادەبن",
+        desc: "ئاهەنگەکە کاتژمێر ٠٨:٣٠ دەستپێدەکات، تکایە پێش کاتژمێر ٠٨:٠٠ ئامادەبن",
         icon: <Clock />,
       },
     },
@@ -33,7 +34,7 @@ function Location({ lang }) {
       },
       ku: {
         label: "گەراج",
-        desc: "بۆ ڕاگرتنی ئۆتۆمبێلەکانتان شوێنی گەراجەکە لەبەردەم دەروازەی پێشەوەیە",
+        desc: "بۆ ڕاگرتنی ئۆتۆمبێلەکانتان، شوێنی گەراجەکە لەبەردەم دەروازەی پێشەوەیە",
         icon: <Car />,
       },
     },
@@ -53,23 +54,17 @@ function Location({ lang }) {
       className={`select-none w-full min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden p-3 ${lang === "ku" ? "font-kurdish" : "font-display"}`}
       style={{ backgroundImage: `url(${locationBg})` }}
     >
-      <button
-        data-component="leave-pages"
-        className="flex items-center gap-1 text-[#5F6B4E] tracking-widest font-bold text-xl opacity-80"
-      >
-        <ArrowLeft size={20} />{" "}
-        <span
-          className={`${lang === "ku" ? "font-ku-display" : "font-display"}`}
-        >
-          {" "}
-          {lang === "ku" ? "ناونیشان" : "Location"}{" "}
-        </span>
-      </button>
+      <ReturnBack
+        lang={lang}
+        text="text-[#5F6B4E] text-xl tracking-widest top-1 left-2"
+        kuWord="ناونیشان"
+        enWord="Location"
+      />
 
       <div
         dir={lang === "ku" ? "rtl" : "ltr"}
         data-component="location-body"
-        className="mt-25 px-6"
+        className="mt-30 px-6"
       >
         <div
           dir="ltr"
@@ -138,7 +133,7 @@ function Location({ lang }) {
             target="_blank"
             className={`flex text-center items-center py-3   gap-2 cursor-pointer
            bg-[#5F6B4E] font-semibold text-[#FDFCF9] border-2 rounded-4xl
-            ${lang === "ku" ? "px-3 font-ku-display text-md" : "px-4 -ml-5 gap-2 font-display text-sm "}`}
+            ${lang === "ku" ? "px-3 font-ku-display text-md w-fit -mr-5" : "px-4 -ml-5 gap-2 font-display text-sm "}`}
           >
             <GiDirectionSigns size={20} />{" "}
             {lang === "ku" ? "وەرگرتنی ئاڕاستە" : "Get Directions"}
@@ -148,7 +143,7 @@ function Location({ lang }) {
             onClick={handleCopy}
             className={`flex text-center items-center p-3 gap-2 cursor-pointer
            bg-[#faf2de] text-[#5F6B4E] border-2 font-semibold rounded-4xl
-            ${lang === "ku" ? "px-3 font-ku-display text-md" : "px-4 -mr-5 gap-2 font-display text-sm "}`}
+            ${lang === "ku" ? "px-3 font-ku-display text-md w-fit -ml-5" : "px-4 -mr-5 gap-2 font-display text-sm "}`}
           >
             {copied ? <TbCopyCheckFilled /> : <Copy size={16} />}
 
