@@ -1,4 +1,4 @@
-import { ArrowLeft, Heart, MessageCircle, Phone } from "lucide-react";
+import { Heart, MessageCircle, Phone } from "lucide-react";
 import contactBg from "../assets/contactBg.png";
 import underContact from "../assets/underContact.png";
 import ReturnBack from "./return";

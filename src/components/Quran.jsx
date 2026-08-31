@@ -86,7 +86,7 @@ function Quran({ lang }) {
       <div className="w-75 p-2 min-h-screen">
         <ReturnBack
           lang={lang}
-          text="text-[#501c08] text-lg tracking-widest"
+          text="text-[#501c08] text-lg tracking-widest top-2 left-3"
           kuWord="قورئان"
           enWord="Quran"
         />

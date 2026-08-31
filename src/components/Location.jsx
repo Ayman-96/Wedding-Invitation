@@ -56,7 +56,7 @@ function Location({ lang }) {
     >
       <ReturnBack
         lang={lang}
-        text="text-[#5F6B4E] text-xl tracking-widest top-1 left-2"
+        text="text-[#5F6B4E] text-xl tracking-widest top-1 left-3"
         kuWord="ناونیشان"
         enWord="Location"
       />
