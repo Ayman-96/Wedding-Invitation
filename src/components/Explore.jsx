@@ -73,6 +73,7 @@ function Explore({ lang }) {
         {sections.map((sec, i) => {
           return (
             <div
+              key={i}
               className={`relative overflow-hidden flex flex-col p-3 pl-4 gap-6 w-42 max-h-35 text-[#454E30] transition-colors duration-800 ease-in-out
                border rounded-3xl ${activeSec === i ? "bg-[#A7B58C] text-[#FDFCF9] border-[#8CA68A]" : "bg-[#F1E8D8] border-[#C2A26B]"}`}
             >

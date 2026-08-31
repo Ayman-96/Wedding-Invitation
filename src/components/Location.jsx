@@ -200,7 +200,7 @@ function Location({ lang }) {
         <div className="space-y-3">
           {toKnow.map((card) => {
             return (
-              <div className={toKnowStyle}>
+              <div className={toKnowStyle} key={card[lang].label}>
                 {card[lang].icon}
                 <div>
                   <p
