@@ -4,6 +4,7 @@ import Contact from "./components/Contact";
 import Home from "./components/Home";
 import Quran from "./components/Quran";
 import Location from "./components/Location";
+import Congrats from "./components/Congrats";
 
 function App() {
   // const [isEnvOpened, setIsEnvOpened] = useState(false);
@@ -28,6 +29,8 @@ function App() {
       {/* <Quran lang={lang} /> */}
 
       {/* <Contact lang={lang} /> */}
+
+      <Congrats lang={lang} />
     </div>
   );
 }
