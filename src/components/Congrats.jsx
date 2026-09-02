@@ -6,6 +6,7 @@ import { BsEnvelopePaperHeart } from "react-icons/bs";
 import leafBg from "../assets/leaveBg.png";
 import underContact from "../assets/underContact.png";
 import redLeaf from "../assets/redLeaf.png";
+import sideLeaf from "../assets/sideLeaf.png";
 
 function Congrats({ lang }) {
   const labelStyle = `text-[#454E30] font-bold ${lang === "ku" ? "font-ku-display mr-2 text-xl" : "font-display ml-2"} select-none`;
@@ -133,7 +134,7 @@ function Congrats({ lang }) {
       {/* Return */}
       <div>
         <div
-          className={`relative overflow-hidden flex gap-3 bg-[#F1E8D8]/60 p-3 rounded-2xl border border-[#501c08] ${lang === "ku" ? "text-right" : " text-left"}`}
+          className={`relative overflow-hidden z-999 flex gap-3 bg-[#F1E8D8]/60 p-3 rounded-2xl border border-[#501c08] ${lang === "ku" ? "text-right" : " text-left"}`}
         >
           <img
             src={redLeaf}
@@ -161,6 +162,10 @@ function Congrats({ lang }) {
             className={`absolute ${lang === "ku" ? "left-3" : " right-3"}`}
           />
         </div>
+        <img
+          src={sideLeaf}
+          className={`absolute w-50 opacity-80 z-1 ${lang === "ku" ? "-right-20 bottom-13 -rotate-40" : "-left-20 bottom-15 rotate-40"}`}
+        />
       </div>
     </div>
   );
