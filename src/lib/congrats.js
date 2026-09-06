@@ -55,6 +55,7 @@ export async function deleteOwnCongrats(id) {
 
   if (!error) {
     localStorage.removeItem(`congrats_token_${id}`);
+    localStorage.removeItem("has_congratulated"); // let them post again
   }
   return { error };
 }
