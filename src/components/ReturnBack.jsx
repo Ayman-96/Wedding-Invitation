@@ -1,10 +1,11 @@
 import { ArrowLeft } from "lucide-react";
 
-function ReturnBack({ lang, text, kuWord, enWord }) {
+function ReturnBack({ lang, text, kuWord, enWord, closePage }) {
   // text = text-color tracking-wide text-size top- left-
   return (
     <button
       dir="ltr"
+      onClick={closePage}
       data-component="leave-pages"
       className={`absolute flex gap-2 ${lang === "ku" ? "items-end" : "items-center"} font-bold opacity-80 ${text}`}
     >
