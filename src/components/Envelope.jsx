@@ -46,41 +46,46 @@ function Envelope({ closeEnvelope }) {
   }, [cardRised, closeEnvelope]);
   return (
     <div
-      className={`flex items-center justify-center w-full h-screen overflow-x-hidden bg-cover bg-no-repeat bg-center ${cardRised && "animate-fade-out"}`}
+      draggable={false}
+      className={`flex items-center justify-center w-full h-screen opacity-100 overflow-x-hidden bg-cover bg-no-repeat bg-center transition-all duration-1000 ease-in ${cardRised && "animate-fade-out"}`}
       onPointerDown={handlePointerDown}
       onPointerUp={handlePointerUp}
       style={{
         perspective: "1000px",
-        backgroundImage: `url(${bg})`,
+        backgroundImage: `${cardRised ? "linear-gradient(rgba(0, 0, 0, 0.5))" : "linear-gradient(rgba(0,0,0,0.2))"}, url(${bg})`,
+        touchAction: "none",
       }}
     >
-      <div className="relative w-[200vw] max-w-[800px] aspect-[4/3] -ml-2">
+      <div
+        className="relative max-w-[550px] mx-auto w-full flex items-center justify-center transition-all duration-800 ease-in"
+        style={cardRised ? { marginTop: "12rem" } : {}}
+      >
         <img
           src={backBodyImg}
-          draggable="false"
-          className="absolute inset-10 w-[370px] max-w-xl select-none"
+          draggable={false}
+          className="absolute max-w-xl select-none"
         />
         <Card cardRised={cardRised} />
         <img
           src={frontBodyImg}
-          draggable="false"
-          className="absolute inset-10 top-10 left-8 w-[395px] max-w-xl select-none z-10"
+          draggable={false}
+          className="absolute max-w-xl select-none z-10"
         />
 
         <img
           src={flapClosedImg}
-          draggable="false"
-          className={`select-none absolute inset-0 -top-3 -left-10 w-[535px] max-w-2xl origin-top z-15 ${flapOpened ? "animate-flap-open" : ""}`}
+          draggable={false}
+          className={`select-none absolute origin-top z-15 ${flapOpened ? "animate-flap-open" : ""}`}
         />
         <img
           src={sealImg}
-          draggable="false"
-          className={`select-none absolute top-47 left-43 w-[120px] max-w-xl z-100 ${sealRemoved ? "animate-seal-peel" : ""}`}
+          draggable={false}
+          className={`select-none absolute z-100 ${sealRemoved ? "animate-seal-peel" : ""}`}
         />
         <img
           src={flapOpenedImg}
-          draggable="false"
-          className={`select-none absolute inset-0 -top-45 left-1 w-[485px] max-w-2xl opacity-0 origin-top  ${flapOpened ? "animate-flap-close" : ""}`}
+          draggable={false}
+          className={`select-none absolute opacity-0 z-5 origin-top  ${flapOpened ? "animate-flap-close" : ""}`}
         />
       </div>
       <Guider step={step} />

@@ -36,6 +36,10 @@ body,
   overflow-x: hidden;
 }
 
+img {
+  -webkit-user-drag: none;
+}
+
 @keyframes flapClose {
   0% {
     opacity: 0;
@@ -51,7 +55,7 @@ body,
     opacity: 1;
   }
   100% {
-    transform: rotateX(90deg);
+    transform: rotateX(40deg);
     opacity: 0;
   }
 }
@@ -64,7 +68,7 @@ body,
 
   100% {
     opacity: 0;
-    transform: translateX(250px) rotate(200deg);
+    transform: translateX(350px) rotate(100deg);
   }
 }
 @keyframes cardRise {
