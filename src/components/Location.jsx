@@ -5,9 +5,9 @@ import locDivider from "../assets/locDivider.png";
 import { GiDirectionSigns } from "react-icons/gi";
 import { useState } from "react";
 import { TbCopyCheckFilled } from "react-icons/tb";
-import ReturnBack from "./return";
+import ReturnBack from "./ReturnBack";
 
-function Location({ lang }) {
+function Location({ lang, closePage }) {
   const [copied, setCopied] = useState(false);
 
   const toKnowStyle =
@@ -55,6 +55,7 @@ function Location({ lang }) {
       style={{ backgroundImage: `url(${locationBg})` }}
     >
       <ReturnBack
+        closePage={closePage}
         lang={lang}
         text="text-[#5F6B4E] text-xl tracking-widest top-1 left-3"
         kuWord="ناونیشان"

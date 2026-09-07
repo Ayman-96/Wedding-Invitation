@@ -14,7 +14,7 @@ import ayah3 from "../audio/ayah3.mp3";
 import calligraphy1 from "../assets/quranCall1.png";
 import calligraphy2 from "../assets/quranCall2.png";
 import calligraphy3 from "../assets/quranCall3.png";
-import ReturnBack from "./return";
+import ReturnBack from "./ReturnBack";
 
 const ayats = [
   {
@@ -43,7 +43,7 @@ const ayats = [
   },
 ];
 
-function Quran({ lang }) {
+function Quran({ lang, closePage }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [showAyah, setShowAyah] = useState(false);
   const [currentAyah, setCurrentAyah] = useState(ayats[0]);
@@ -85,6 +85,7 @@ function Quran({ lang }) {
     >
       <div className="w-75 p-2 min-h-screen">
         <ReturnBack
+          closePage={closePage}
           lang={lang}
           text="text-[#501c08] text-lg tracking-widest top-2 left-3"
           kuWord="قورئان"
@@ -144,7 +145,7 @@ function Quran({ lang }) {
               />
             </div>
             <div
-              className="absolute bottom-30 -ml-2 bg-[#B2BFA5]/70 w-full h-70 
+              className="absolute bottom-30 -ml-2 bg-[#B2BFA5]/70 w-full h-70 animate-fade-in
             flex items-center justify-between px-7 text-[#0F1E33] flex-col gap-1 text-justify"
               style={
                 lang === "ku" ? { textAlign: "right" } : { textAlign: "left" }

@@ -2,7 +2,7 @@ import Hero from "./Hero";
 import homeBg from "../assets/homeBg.png";
 import Explore from "./Explore";
 import Footer from "./Footer";
-function Home({ lang }) {
+function Home({ lang, setPage }) {
   return (
     <div
       dir={lang === "ku" ? "rtl" : "ltr"}
@@ -25,7 +25,7 @@ function Home({ lang }) {
       </div>
 
       <div className="flex flex-col gap-10">
-        <Explore lang={lang} />
+        <Explore lang={lang} setPage={setPage} />
 
         <Footer lang={lang} />
       </div>

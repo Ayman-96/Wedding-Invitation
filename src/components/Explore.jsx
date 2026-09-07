@@ -1,7 +1,7 @@
 import { BookOpen, MapPin, PartyPopper, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 
-function Explore({ lang }) {
+function Explore({ lang, setPage }) {
   const [activeSec, setActiveSec] = useState(0);
 
   useEffect(() => {
@@ -69,11 +69,12 @@ function Explore({ lang }) {
   ];
   return (
     <div className="flex justify-center select-none">
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-2 gap-5 place-items-center">
         {sections.map((sec, i) => {
           return (
             <div
               key={i}
+              onClick={() => setPage(sec.key)}
               className={`relative overflow-hidden flex flex-col p-3 pl-4 gap-6 w-42 max-h-35 text-[#454E30] transition-colors duration-800 ease-in-out
                border rounded-3xl ${activeSec === i ? "bg-[#A7B58C] text-[#FDFCF9] border-[#8CA68A]" : "bg-[#F1E8D8] border-[#C2A26B]"}`}
             >

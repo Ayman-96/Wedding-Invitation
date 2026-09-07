@@ -1,32 +1,32 @@
 import { Heart, MessageCircle, Phone } from "lucide-react";
 import contactBg from "../assets/contactBg.png";
 import underContact from "../assets/underContact.png";
-import ReturnBack from "./return";
+import ReturnBack from "./ReturnBack";
 
-function Contact({ lang }) {
+function Contact({ lang, closePage }) {
   const contacts = [
     {
       en: {
         name: "Khaled",
         role: "Father of the Groom",
-        phone: "+07512358250",
+        phone: "96407512358250",
       },
       ku: {
         name: "خالید",
         role: "باوکی زاوا",
-        phone: "+07512358250",
+        phone: "96407512358250",
       },
     },
     {
       en: {
         name: "Aso",
         role: "Father of the Bride",
-        phone: "+07512358250",
+        phone: "96407512358250",
       },
       ku: {
         name: "ئاسۆ",
         role: "باوکی بووکێ",
-        phone: "+07512358250",
+        phone: "96407512358250",
       },
     },
   ];
@@ -36,6 +36,7 @@ function Contact({ lang }) {
       style={{ backgroundImage: `url(${contactBg})` }}
     >
       <ReturnBack
+        closePage={closePage}
         lang={lang}
         text="text-[#501c08] text-lg tracking-widest top-2 left-3"
         kuWord="پەیوەندی"
@@ -84,7 +85,7 @@ function Contact({ lang }) {
 
               <div className="flex gap-5">
                 <a
-                  href={`tel:${contact[lang].phone}`}
+                  href={`tel:${contact[lang].phone.slice(3, contact[lang].phone.length)}`}
                   className={`flex gap-2 items-center justify-center bg-[#454E30] text-white rounded-full 
                     ${lang === "ku" ? "w-34 p-2 font-ku-display text-lg" : "w-24 font-body"}`}
                 >
@@ -92,7 +93,7 @@ function Contact({ lang }) {
                   {lang === "ku" ? "پەیوەندیکردن" : "Call"}
                 </a>
                 <a
-                  href={`https://wa.me/${contact[lang].phone.replace(/\D/g, "")}`}
+                  href={`https://wa.me/${contact[lang].phone}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`flex gap-2 items-center justify-center bg-[#6d9733]/80 text-white rounded-full 

@@ -11,12 +11,12 @@ function Hero({ lang }) {
 
   const content = {
     en: {
-      title: "Ahmad Kaya",
+      title: "Ayman Kas",
       subtitle: "Together with their families",
       date: "SATURDAY ❁ OCTOBER 4 ❁ 2026",
     },
     ku: {
-      title: "ئەحمەد کایا",
+      title: "ئەیمەن کەس",
       subtitle: "بانگهێشتتان دەکەین بۆ ئاهەنگی مارەبڕینی",
       date: "شەممە ❁ ٤ بەفرانبار  ❁ ٢٠٢٦",
     },
@@ -24,7 +24,7 @@ function Hero({ lang }) {
   const names = content[lang].title.split(" ");
 
   const styleCountdown =
-    "flex flex-col items-center justify-center p-2 w-28 font-bold text-xl text-[#5F6B4E] bg-[#F1E8D8] border border-[#C2A26B] rounded-2xl";
+    "flex flex-col items-center justify-center p-2 w-26 font-bold text-xl text-[#5F6B4E] bg-[#F1E8D8] border border-[#C2A26B] rounded-2xl";
 
   function formatNum(num, lang) {
     return lang === "ku" ? num.toLocaleString("ar-EG") : num;

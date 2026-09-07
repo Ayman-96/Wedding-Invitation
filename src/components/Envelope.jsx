@@ -57,7 +57,7 @@ function Envelope({ closeEnvelope }) {
       }}
     >
       <div
-        className="relative max-w-[550px] mx-auto w-full flex items-center justify-center transition-all duration-800 ease-in"
+        className="relative max-w-137.5 mx-auto w-full flex items-center justify-center transition-all duration-800 ease-in"
         style={cardRised ? { marginTop: "12rem" } : {}}
       >
         <img
