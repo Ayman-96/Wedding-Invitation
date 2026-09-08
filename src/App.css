@@ -2,11 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&family=Noto+Naskh+Arabic:wght@400..700&display=swap");
 
 @import "tailwindcss";
 @theme {
   --font-ku-display: "Amiri", sans-serif;
-  --font-ku-body: serif;
+  --font-ku-body: "Noto Naskh Arabic";
   --font-display: "Fraunces", serif;
   --font-body: "Instrument Sans", sans-serif;
   --font-ayah: "Noto Nastaliq Urdu", serif;

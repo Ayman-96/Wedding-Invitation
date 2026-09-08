@@ -6,7 +6,9 @@ function Footer({ lang }) {
       dir={lang}
       className="flex items-center flex-col justify-center px-6 pt-1"
     >
-      <div
+      <a
+        href="https://www.instagram.com/aeman_a96/#"
+        target="_blank"
         className="flex justify-center p-2 rounded-2xl w-full bg-[#A7B58C]/85 text-[#FDFCF9]
         font-normal tracking-wide animate-color-pulse"
       >
@@ -21,7 +23,7 @@ function Footer({ lang }) {
             <LuHeartHandshake fill="#D8A7A0" stroke="#FDFCF9" /> K{" "}
           </p>
         )}
-      </div>
+      </a>
 
       <p className="mt-5 text-[#D8A7A0]/80">powered by Ayman</p>
     </footer>

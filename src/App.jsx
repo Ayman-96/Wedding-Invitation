@@ -5,6 +5,8 @@ import Home from "./components/Home";
 import Quran from "./components/Quran";
 import Location from "./components/Location";
 import Congrats from "./components/Congrats";
+import kurdistanFlag from "./assets/kurdistanFlag.png";
+import englishFlag from "./assets/englishFlag.png";
 
 function App() {
   const [isEnvOpened, setIsEnvOpened] = useState(false);
@@ -14,9 +16,12 @@ function App() {
     <div className="relative">
       <div
         onClick={() => setLang((prev) => (prev === "ku" ? "en" : "ku"))}
-        className="absolute select-none top-2 right-2 bg-emerald-200/50 flex items-center justify-center text-center w-10 h-10 p-5 z-999 cursor-pointer hover:bg-emerald-800 transition-colors duration-300"
+        className="absolute select-none opacity-75 top-2 right-2 bg-emerald-200/50 flex items-center justify-center p-5 z-999 cursor-pointer hover:bg-emerald-800 transition-colors duration-300"
       >
-        {lang === "ku" ? "KU" : "EN"}
+        <img
+          src={lang === "ku" ? kurdistanFlag : englishFlag}
+          className="absolute"
+        />
       </div>
 
       {/* <div className="absolute z-999 top-1/2 left-1/2 p-5 flex flex-col items-center justify-center gap-5">

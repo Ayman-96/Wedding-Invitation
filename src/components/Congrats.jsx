@@ -16,6 +16,7 @@ import redLeaf from "../assets/redLeaf.png";
 import sideLeaf from "../assets/sideLeaf.png";
 import { useEffect, useState } from "react";
 import roseCorner from "../assets/cornerFlower.png";
+import { formatDateToNow } from "../lib/formatDateToNow";
 
 function Congrats({ lang, closePage }) {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -237,7 +238,7 @@ function Congrats({ lang, closePage }) {
               <p
                 className={`absolute bottom-1 text-xs font-body text-[#5F6B4E] ${lang === "ku" ? "left-3" : " right-3"}`}
               >
-                {"X"}/96
+                {message.length}/96
               </p>
             </div>
 
@@ -308,7 +309,7 @@ function Congrats({ lang, closePage }) {
           </svg>
           <span class="sr-only">Loading...</span>
         </div>
-      ) : allCongrats > 0 ? (
+      ) : allCongrats ? (
         <div className="flex flex-col gap-5">
           {allCongrats?.map((congrat) => {
             // eslint-disable-next-line react-hooks/purity
@@ -335,7 +336,11 @@ function Congrats({ lang, closePage }) {
                   <p className="font-bold text-[#501c08] font-ku-display">
                     {congrat.name}
                   </p>
-                  <p className="text-xs -mt-1 text-gray-400">3 min ago</p>
+                  <p
+                    className={`text-[0.65rem] -mt-1 text-[#78756b] ${lang === "ku" ? "font-ku-body" : "font-body"}`}
+                  >
+                    {formatDateToNow(congrat.created_at, lang)}
+                  </p>
                   <p
                     className={`text-[#0F1E33] font-body  ${lang === "ku" ? "text-md" : "text-sm"}`}
                   >

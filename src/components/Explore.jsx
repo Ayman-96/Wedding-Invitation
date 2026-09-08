@@ -93,7 +93,7 @@ function Explore({ lang, setPage }) {
                   {sec[lang].label}
                 </p>
                 <p
-                  className={` ${lang === "ku" ? "font-ku-body font-extralight" : "font-body text-xs "}`}
+                  className={` ${lang === "ku" ? "font-ku-body text-xs font-extralight" : "font-body text-xs "}`}
                 >
                   {sec[lang].subLabel}
                 </p>
