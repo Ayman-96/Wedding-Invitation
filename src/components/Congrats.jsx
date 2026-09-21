@@ -153,7 +153,7 @@ function Congrats({ lang, closePage }) {
             <div role="status">
               <svg
                 aria-hidden="true"
-                class="absolute z-999 inset-0 top-1/2 left-1/2 inline w-14 h-14 text-[#501c08] animate-spin fill-success"
+                className="absolute z-999 inset-0 top-1/2 left-1/2 inline w-14 h-14 text-[#501c08] animate-spin fill-success"
                 viewBox="0 0 100 101"
                 fill="#E4DCC4"
                 xmlns="http://www.w3.org/2000/svg"
@@ -293,7 +293,7 @@ function Congrats({ lang, closePage }) {
         <div role="status">
           <svg
             aria-hidden="true"
-            class="absolute z-999 inset-0 top-1/2 left-1/2 inline w-14 h-14 text-[#501c08] animate-spin fill-success"
+            className="absolute z-999 inset-0 top-1/2 left-1/2 inline w-14 h-14 text-[#501c08] animate-spin fill-success"
             viewBox="0 0 100 101"
             fill="#E4DCC4"
             xmlns="http://www.w3.org/2000/svg"

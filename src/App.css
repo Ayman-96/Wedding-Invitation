@@ -6,7 +6,7 @@
 
 @import "tailwindcss";
 @theme {
-  --font-ku-display: "Amiri", sans-serif;
+  --font-ku-display: "Amiri", "Fraunces", -apple-system, sans-serif;
   --font-ku-body: "Noto Naskh Arabic";
   --font-display: "Fraunces", serif;
   --font-body: "Instrument Sans", sans-serif;

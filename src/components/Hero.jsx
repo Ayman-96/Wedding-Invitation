@@ -32,7 +32,7 @@ function Hero({ lang }) {
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date().getTime();
-      const remained = new Date("2026-10-04:12:12").getTime() - now;
+      const remained = new Date("2027-01-01:12:12").getTime() - now;
 
       if (remained < 0) {
         clearInterval(interval);
